@@ -1,18 +1,18 @@
 <div align="center">💰 Controle Financeiro em Python
 
-Sistema de controle de receitas e gastos feito em Python
+Sistema simples para registrar receitas, gastos e calcular saldo
 
-"Python" (https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python)
+"Python" (https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
 "Status" (https://img.shields.io/badge/Status-Em%20desenvolvimento-yellow?style=for-the-badge)
-"GitHub" (https://img.shields.io/badge/GitHub-Projeto-black?style=for-the-badge&logo=github)
+"GitHub" (https://img.shields.io/badge/GitHub-Portf%C3%B3lio-181717?style=for-the-badge&logo=github)
 
 </div>---
 
 📌 Sobre o projeto
 
-O Controle Financeiro em Python é um sistema simples de terminal criado para registrar receitas e gastos, calcular o saldo atual e armazenar os dados em um arquivo ".txt".
+O Controle Financeiro em Python é um sistema de terminal criado para registrar receitas e gastos, calcular o saldo atual e manter os dados salvos em um arquivo ".txt".
 
-O objetivo do projeto é praticar lógica de programação com Python, usando um exemplo real de organização financeira.
+O projeto foi desenvolvido para praticar lógica de programação, manipulação de arquivos e organização de dados em Python.
 
 ---
 
@@ -36,7 +36,7 @@ Escolha:
 - ✅ Adicionar gastos
 - ✅ Calcular saldo atual
 - ✅ Mostrar se o saldo está positivo, zerado ou negativo
-- ✅ Salvar informações em arquivo ".txt"
+- ✅ Salvar dados em arquivo ".txt"
 - ✅ Carregar dados salvos ao iniciar o programa
 - ✅ Apagar receitas cadastradas
 - ✅ Apagar gastos cadastrados
@@ -46,18 +46,16 @@ Escolha:
 
 🧠 Conceitos aplicados
 
-Neste projeto foram utilizados conceitos fundamentais de Python:
-
-Conceito| Aplicação no projeto
-"listas"| Guardar receitas e gastos
-"while"| Manter o menu rodando
-"if / elif / else"| Controlar as opções do menu
-"float()"| Converter valores digitados
-"sum()"| Somar receitas e gastos
-"open()"| Ler e salvar arquivos
-"try / except"| Evitar erro caso o arquivo não exista
-"pop()"| Remover itens cadastrados
-"enumerate()"| Listar itens com numeração
+Conceito| Aplicação
+Listas| Guardar receitas e gastos
+While| Manter o menu funcionando
+If / elif / else| Controlar as opções do menu
+Float| Converter valores digitados
+Sum| Somar receitas e gastos
+Open| Ler e escrever arquivos
+Try / except| Evitar erro caso o arquivo não exista
+Pop| Remover itens cadastrados
+Enumerate| Mostrar itens com numeração
 
 ---
 
@@ -85,7 +83,7 @@ Clone o repositório:
 
 git clone https://github.com/m4rcusgollub/controle-financeiro-python.git
 
-Entre na pasta do projeto:
+Entre na pasta:
 
 cd controle-financeiro-python
 
@@ -109,7 +107,7 @@ RECEITA - 100.0
 GASTO - 30.0
 RECEITA - 50.0
 
-Quando o programa é iniciado, ele lê esse arquivo e carrega automaticamente os valores salvos.
+Ao iniciar o programa, o sistema lê esse arquivo e carrega automaticamente os valores salvos.
 
 ---
 
@@ -144,9 +142,9 @@ Saldo positivo
 
 📚 Aprendizados
 
-Durante o desenvolvimento deste projeto, foram praticados conceitos importantes de programação, como estrutura de repetição, condicionais, listas, manipulação de arquivos e versionamento com Git.
+Durante o desenvolvimento deste projeto, foram praticados conceitos importantes de programação, como listas, condicionais, laços de repetição, manipulação de arquivos e versionamento com Git.
 
-O projeto também ajudou a entender como pequenos sistemas podem salvar, carregar e modificar dados de forma simples.
+O projeto também mostra como um sistema simples pode salvar, carregar e modificar dados de forma persistente.
 
 ---
 
