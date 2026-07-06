@@ -1,0 +1,14 @@
+[
+  {
+    "tipo": "receita",
+    "descricao": "Salário",
+    "categoria": "Trabalho",
+    "valor": 1000.0
+  },
+  {
+    "tipo": "gasto",
+    "descricao": "Mercado",
+    "categoria": "Alimentação",
+    "valor": 80.0
+  }
+]

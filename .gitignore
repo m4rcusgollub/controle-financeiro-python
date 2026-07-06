@@ -1,1 +1,4 @@
 dados.txt
+dados.json
+__pycache__/
+*.pyc
