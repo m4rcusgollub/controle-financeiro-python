@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #111827, #1e293b);
+    color: #f8fafc;
+}
+
+.container {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.cabecalho {
+    margin-bottom: 30px;
+}
+
+.tag {
+    display: inline-block;
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+
+.cabecalho h1 {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.cabecalho p {
+    color: #cbd5e1;
+    max-width: 650px;
+    line-height: 1.6;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr 1fr;
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.card {
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 20px;
+    padding: 24px;
+}
+
+.card p {
+    color: #94a3b8;
+    margin-bottom: 10px;
+}
+
+.card h2 {
+    font-size: 30px;
+}
+
+.destaque h2 {
+    font-size: 40px;
+}
+
+.receita {
+    color: #22c55e;
+}
+
+.gasto {
+    color: #ef4444;
+}
+
+.status {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 7px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+}
+
+.positivo {
+    color: #22c55e;
+    background: rgba(34, 197, 94, 0.12);
+}
+
+.zerado {
+    color: #facc15;
+    background: rgba(250, 204, 21, 0.12);
+}
+
+.negativo {
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.12);
+}
+
+.conteudo {
+    display: grid;
+    grid-template-columns: 0.9fr 1.4fr;
+    gap: 20px;
+}
+
+.painel {
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 20px;
+    padding: 24px;
+}
+
+.painel h2 {
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+label {
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 13px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    background: #020617;
+    color: #f8fafc;
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: #38bdf8;
+}
+
+button {
+    margin-top: 8px;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #0ea5e9, #2563eb);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+.lista {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.movimentacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    background: rgba(2, 6, 23, 0.75);
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    border-radius: 16px;
+    padding: 16px;
+}
+
+.movimentacao p {
+    color: #94a3b8;
+    margin-top: 4px;
+}
+
+.tipo {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 5px 9px;
+    border-radius: 999px;
+    font-size: 12px;
+}
+
+.receita-bg {
+    color: #22c55e;
+    background: rgba(34, 197, 94, 0.12);
+}
+
+.gasto-bg {
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.12);
+}
+
+.acoes {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.valor {
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.apagar {
+    text-decoration: none;
+    color: #f8fafc;
+    background: rgba(239, 68, 68, 0.18);
+    border: 1px solid rgba(239, 68, 68, 0.35);
+    padding: 8px 10px;
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+.apagar:hover {
+    background: rgba(239, 68, 68, 0.28);
+}
+
+.vazio {
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+@media (max-width: 850px) {
+    .cabecalho h1 {
+        font-size: 32px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .conteudo {
+        grid-template-columns: 1fr;
+    }
+
+    .movimentacao {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .acoes {
+        width: 100%;
+        justify-content: space-between;
+    }
+}

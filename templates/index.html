@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle Financeiro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <main class="container">
+        <header class="cabecalho">
+            <span class="tag">Controle Financeiro</span>
+            <h1>Gerencie suas receitas e gastos</h1>
+            <p>
+                Sistema simples para registrar movimentações, acompanhar o saldo
+                e manter os dados salvos localmente.
+            </p>
+        </header>
+
+        <section class="cards">
+            <div class="card">
+                <p>Total de receitas</p>
+                <h2 class="receita">{{ formatar_dinheiro(total_receitas) }}</h2>
+            </div>
+
+            <div class="card destaque">
+                <p>Saldo atual</p>
+                <h2>{{ formatar_dinheiro(saldo) }}</h2>
+
+                {% if saldo > 0 %}
+                    <span class="status positivo">Saldo positivo</span>
+                {% elif saldo == 0 %}
+                    <span class="status zerado">Saldo zerado</span>
+                {% else %}
+                    <span class="status negativo">Saldo negativo</span>
+                {% endif %}
+            </div>
+
+            <div class="card">
+                <p>Total de gastos</p>
+                <h2 class="gasto">{{ formatar_dinheiro(total_gastos) }}</h2>
+            </div>
+        </section>
+
+        <section class="conteudo">
+            <div class="painel">
+                <h2>Nova movimentação</h2>
+
+                <form action="{{ url_for('adicionar_movimentacao') }}" method="POST">
+                    <label>Descrição</label>
+                    <input 
+                        type="text" 
+                        name="descricao" 
+                        placeholder="Ex: Salário, mercado, transporte"
+                        required
+                    >
+
+                    <label>Categoria</label>
+                    <input 
+                        type="text" 
+                        name="categoria" 
+                        placeholder="Ex: Trabalho, alimentação, estudos"
+                        required
+                    >
+
+                    <label>Valor</label>
+                    <input 
+                        type="number" 
+                        name="valor" 
+                        step="0.01" 
+                        min="0.01"
+                        placeholder="Ex: 100.00"
+                        required
+                    >
+
+                    <label>Tipo</label>
+                    <select name="tipo" required>
+                        <option value="receita">Receita</option>
+                        <option value="gasto">Gasto</option>
+                    </select>
+
+                    <button type="submit">Adicionar movimentação</button>
+                </form>
+            </div>
+
+            <div class="painel">
+                <h2>Histórico</h2>
+
+                {% if movimentacoes %}
+                    <div class="lista">
+                        {% for item in movimentacoes %}
+                            <div class="movimentacao">
+                                <div>
+                                    <strong>{{ item.descricao }}</strong>
+                                    <p>{{ item.categoria }}</p>
+
+                                    {% if item.tipo == "receita" %}
+                                        <span class="tipo receita-bg">Receita</span>
+                                    {% else %}
+                                        <span class="tipo gasto-bg">Gasto</span>
+                                    {% endif %}
+                                </div>
+
+                                <div class="acoes">
+                                    {% if item.tipo == "receita" %}
+                                        <span class="valor receita">+ {{ formatar_dinheiro(item.valor) }}</span>
+                                    {% else %}
+                                        <span class="valor gasto">- {{ formatar_dinheiro(item.valor) }}</span>
+                                    {% endif %}
+
+                                    <a 
+                                        href="{{ url_for('apagar_movimentacao', indice=loop.index0) }}" 
+                                        class="apagar"
+                                    >
+                                        Apagar
+                                    </a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p class="vazio">Nenhuma movimentação cadastrada ainda.</p>
+                {% endif %}
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
