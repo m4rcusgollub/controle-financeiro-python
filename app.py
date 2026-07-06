@@ -68,7 +68,7 @@ def adicionar_movimentacao():
         return redirect(url_for("index"))
 
     try:
-        valor = float(valor)
+        valor = float(valor.replace(",", "."))
     except ValueError:
         return redirect(url_for("index"))
 
